@@ -10,12 +10,14 @@ const client = new discord.Client({
 })
 
 const { DisTube } = require("distube") 
+const {SpotifyPlugin } = require("@distube/spotify");
 
 client.DisTube = new DisTube(client, {
   leaveOnStop: false,
   emitNewSongOnly: true,
   emitAddSongWhenCreatingQueue: false,
   emitAddListWhenCreatingQueue: false,
+  plugins: [new SpotifyPlugin()],
 })
 
 
